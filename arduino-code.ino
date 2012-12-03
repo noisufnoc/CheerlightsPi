@@ -71,7 +71,7 @@ void loop() {
     }
     else if (String(stringIn) == "orange")
     {  
-        Serial.println("green");
+        Serial.println("orange");
     }
     else if (String(stringIn) == "warmwhite")
     {  
