@@ -79,3 +79,19 @@ void loop() {
     }
   }
 } // End loop
+
+/*
+colors needed to support
+white
+black
+red
+green
+blue
+cyan
+magenta
+yellow
+purple
+orange
+warmwhite
+off
+*/
