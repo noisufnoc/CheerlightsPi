@@ -70,28 +70,27 @@ void loop() {
         analogWrite( RED, 128 );
         analogWrite( GREEN, 255 );
     }
-    else if (String(stringIn) == "white")
+    else if (String(stringIn) == "white" || String(stringIn) == "warmwhite")
     {  
     	Serial.println("white");
         analogWrite( BLUE, 0 );
         analogWrite( RED, 0 );
         analogWrite( GREEN, 0 );
     }
+    else if (String(stringIn) == "black" || String(stringIn) == "off")
+    {
+        Serial.println("black");
+        analogWrite( BLUE, 255 );
+        analogWrite( RED, 255 );
+        analogWrite( GREEN, 255 );
+    }
   }
 } // End loop
 
 /*
 colors needed to support
-white
-black
-red
-green
-blue
 cyan
 magenta
 yellow
-purple
 orange
-warmwhite
-off
 */
