@@ -8,20 +8,18 @@ DEVICE = '/dev/ttyACM0'
 BAUD = 9600
 arduino = serial.Serial(DEVICE, BAUD)
 
-# Read the thingspeak feed to get the current color
-
+# I'm going to use a var to check if I've seen the color before
 color = 'black'
 
+# Read the thingspeak feed to get the current color
 while True:
 	try:
-        	cheerlights_feed = requests.get('http://api.thingspeak.com/channels/1417/field/1/last.json').json
+        	cheerlights = requests.get('http://api.thingspeak.com/channels/1417/field/1/last.json').json['field1']
 	except:
 		pass
-	if cheerlights_feed['field1'] == color:
-		#I've seen this before, skip
-	else:
+	if cheerlights != color:
 		#New color, do stuff
-        	arduino.write(cheerlights_feed['field1'])
-	        print cheerlights_feed['field1']
-		color = cheerlights_feed['filed1']
+        	arduino.write(cheerlights)
+	        print cheerlights
+		color = cheerlights
         time.sleep(16)
