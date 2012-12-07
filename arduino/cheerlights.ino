@@ -52,45 +52,65 @@ void loop() {
     else if (String(stringIn) == "green")
     {  
     	Serial.println("green");
-        analogWrite( GREEN, 0 );
         analogWrite( RED, 255 );
+        analogWrite( GREEN, 0 );
         analogWrite( BLUE, 255 );
     }
     else if (String(stringIn) == "blue")
     {  
     	Serial.println("blue");
-        analogWrite( BLUE, 0 );
         analogWrite( RED, 255 );
         analogWrite( GREEN, 255 );
+        analogWrite( BLUE, 0 );
+    }
+    else if (String(stringIn) == "cyan")
+    {
+        Serial.println("cyan");
+        analogWrite( RED, 255 );
+        analogWrite( GREEN, 0 );
+        analogWrite( BLUE, 0 );
     }
     else if (String(stringIn) == "purple")
     {  
     	Serial.println("purple");
-        analogWrite( BLUE, 128 );
         analogWrite( RED, 128 );
         analogWrite( GREEN, 255 );
+        analogWrite( BLUE, 128 );
+    }
+    else if (String(stringIn) == "magenta")
+    {
+        Serial.println("magenta");
+        analogWrite( RED, 0 );
+        analogWrite( GREEN, 255 );
+        analogWrite( BLUE, 0 );
+    }
+    else if (String(stringIn) == "yellow")
+    {
+        Serial.println("yellow");
+        analogWrite( RED, 0 );
+        analogWrite( GREEN, 0 );
+        analogWrite( BLUE, 255 );
+    }
+    else if (String(stringIn) == "orange")
+    {
+        Serial.println("orange");
+        analogWrite( RED, 0 );
+        analogWrite( GREEN, 90 );
+        analogWrite( BLUE, 255 );
     }
     else if (String(stringIn) == "white" || String(stringIn) == "warmwhite")
     {  
     	Serial.println("white");
-        analogWrite( BLUE, 0 );
         analogWrite( RED, 0 );
         analogWrite( GREEN, 0 );
+        analogWrite( BLUE, 0 );
     }
     else if (String(stringIn) == "black" || String(stringIn) == "off")
     {
         Serial.println("black");
         analogWrite( BLUE, 255 );
-        analogWrite( RED, 255 );
         analogWrite( GREEN, 255 );
+        analogWrite( RED, 255 );
     }
   }
 } // End loop
-
-/*
-colors needed to support
-cyan
-magenta
-yellow
-orange
-*/
