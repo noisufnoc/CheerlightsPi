@@ -1,5 +1,7 @@
 #include "Tlc5940.h"
 
+// This sketch uses a TI TLC5940 to control the RGB LEDs
+
 void setup()
 {
   // Call Tlc.init() to setup the tlc.
