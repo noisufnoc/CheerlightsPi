@@ -40,6 +40,7 @@ while True:
         print foo
 
         color = cheerlights
+        rgb_list = []
 
         # I must have picked 16s for a reason
         time.sleep(16)
