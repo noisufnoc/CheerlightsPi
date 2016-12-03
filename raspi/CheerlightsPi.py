@@ -9,9 +9,9 @@ import requests
 # TODO: function for sending color to arduino
 
 # Setup Arduino conneciton
-# DEVICE = '/dev/ttyACM0'
-# BAUD = 9600
-# arduino = serial.Serial(DEVICE, BAUD)
+DEVICE = '/dev/ttyACM0'
+BAUD = 9600
+arduino = serial.Serial(DEVICE, BAUD)
 
 # Zero out RGB list
 rgb_list = []
@@ -36,8 +36,9 @@ while True:
             value = int(cheerlights[i:i+2], 16)
             rgb_list.append(value)
 
-        foo = ",".join(str(i) for i in rgb_list)
-        print foo
+        command = ",".join(str(i) for i in rgb_list)
+        arduino.write(command)
+        print command
 
         color = cheerlights
         rgb_list = []
